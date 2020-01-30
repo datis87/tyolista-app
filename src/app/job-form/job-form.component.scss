@@ -1,3 +1,9 @@
-p {
-    color: yellow;
+.form-container {
+    display: grid;
+    grid-template-columns: 5;
+}
+
+.form-container > * {
+    //display: flex;
+    //flex-direction: column;
 }
