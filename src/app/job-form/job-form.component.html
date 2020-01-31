@@ -1,75 +1,130 @@
-<div class="form-container">
+<div class="container">
+    <div class="form-container">
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Työnumero" [(ngModel)]="myJob.Tyono">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Päivämäärä"  [(ngModel)]="myJob.Paivamaara"
+                [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Toimituspaivä"  [(ngModel)]="myJob.Toimituspaiva"
+                [matDatepicker]="picker2">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Tekijä" [(ngModel)]="myJob.Tekija">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Työ" [(ngModel)]="myJob.Tyo">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+            <input matInput placeholder="Asiakas" [(ngModel)]="myJob.Asiakas">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+            <input matInput placeholder="Yritys" [(ngModel)]="myJob.Yritys">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Laskutusosoite" [(ngModel)]="myJob.Laskutusosoite">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Tarjottu" [(ngModel)]="myJob.Tarjottu">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Kustannusarvio" [(ngModel)]="myJob.Kustannusarvio">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Koko" [(ngModel)]="myJob.Koko">
+            </mat-form-field>    
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Sivumäärä" [(ngModel)]="myJob.Sivumaara">
+            </mat-form-field>
+        </div>    
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Painosmäärä" [(ngModel)]="myJob.Painosmaara">
+            </mat-form-field>
+
+        </div>    
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Värit" [(ngModel)]="myJob.Varit">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Paperi" [(ngModel)]="myJob.Paperi">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Jälkikäsittely" [(ngModel)]="myJob.Jalkikasittely">
+            </mat-form-field>
+        </div> 
+        
+        <div>        
+            <mat-form-field>
+                <input matInput placeholder="Toimituskulut" [(ngModel)]="myJob.Toimituskulut">
+            </mat-form-field>
+        </div>
+        
+        <div>    
+            <mat-form-field>
+                <input matInput placeholder="Tunnit" [(ngModel)]="myJob.Tunnit">
+            </mat-form-field>
+        </div>
+        
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Laskutusnumero" [(ngModel)]="myJob.Laskutusnumero">
+            </mat-form-field>
+        </div>
     
-    <mat-form-field>
-      <input matInput placeholder="Työnumero">
-    </mat-form-field>
-  
-    <mat-form-field>
-        <input matInput placeholder="Päivämäärä">
-    </mat-form-field>
+    </div>
 
-    <mat-form-field>
-        <input matInput placeholder="Toimituspaivä">
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput placeholder="Tekijä">
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput placeholder="Työ">
-    </mat-form-field>
-    
-    <mat-form-field>
-      <input matInput placeholder="Asiakas">
-    </mat-form-field>
-  
-    <mat-form-field>
-        <input matInput placeholder="Laskutusosoite">
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput placeholder="Tarjottu">
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput placeholder="Kustannusarvio">
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput placeholder="Koko">
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput placeholder="Sivumäärä">
-      </mat-form-field>
-    
-      <mat-form-field>
-          <input matInput placeholder="Painosmäärä">
-      </mat-form-field>
-  
-      <mat-form-field>
-          <input matInput placeholder="Värit">
-      </mat-form-field>
-  
-      <mat-form-field>
-          <input matInput placeholder="Paperi">
-      </mat-form-field>
-  
-      <mat-form-field>
-          <input matInput placeholder="Jälkikäsittely">
-      </mat-form-field>
-      
-      <mat-form-field>
-        <input matInput placeholder="Toimituskulut">
-      </mat-form-field>
-    
-      <mat-form-field>
-          <input matInput placeholder="Tunnit">
-      </mat-form-field>
-  
-      <mat-form-field>
-          <input matInput placeholder="Laskutusnumero">
-      </mat-form-field>
-  
-  </div>
+    <div class="button">
+        <button (click)="getNewJob()">Hae uusi työ</button>
+        <button (click)="setJob()">Vie työ listaan</button>
+    </div>
+</div>

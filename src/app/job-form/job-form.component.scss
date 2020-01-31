@@ -1,9 +1,18 @@
-.form-container {
+.container {
     display: grid;
-    grid-template-columns: 5;
+    grid-template-rows: 2;
 }
 
-.form-container > * {
-    //display: flex;
-    //flex-direction: column;
+.form-container {
+margin: 10px;
+grid-row: 1;
+}
+
+.form-container > div {
+    float: left;
+    padding: 10px
+}
+
+button {
+    grid-row: 2;
 }

@@ -9,12 +9,12 @@
 
         <ng-container matColumnDef="Pvm">
             <th mat-header-cell *matHeaderCellDef> Päivämäärä </th>
-            <td mat-cell *matCellDef="let job"> {{job.Paivamaara}} </td>
+            <td mat-cell *matCellDef="let job"> {{job.Paivamaara | date : 'dd.MM.yyyy'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="Toimituspaivä">
             <th mat-header-cell *matHeaderCellDef> Toimituspaiva </th>
-            <td mat-cell *matCellDef="let job"> {{job.Toimituspaiva}} </td>
+            <td mat-cell *matCellDef="let job"> {{job.Toimituspaiva| date : 'dd.MM.yyyy'}} </td>
         </ng-container>
 
         <ng-container matColumnDef="Tekijä">

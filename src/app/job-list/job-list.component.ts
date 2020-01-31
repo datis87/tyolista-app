@@ -1,36 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Job } from './job.interface';
-import { RouterLink, Router } from '@angular/router';
+import { JobService } from '../services/job.service';
+import { Subscription } from 'rxjs';
 
-const JOB_DATA: Job[] = [
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 2, Tekija: 'Tekija 2', Tyo: 'Työ 2' },
-  {Tyono: 3, Tekija: 'Tekija 1', Tyo: 'Työ 3' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' },
-  {Tyono: 1, Tekija: 'Tekija 1', Tyo: 'Työ 1' }
-
-];
+const JOB_DATA: Job[] = [];
 
 @Component({
   selector: 'app-job-list',
@@ -38,7 +11,8 @@ const JOB_DATA: Job[] = [
   styleUrls: ['./job-list.component.scss']
 })
 export class JobListComponent implements OnInit {
-  displayedColumns: string[] = [
+  private dataSource: Job[];
+  private displayedColumns: string[] = [
     'Työno',
     'Pvm',
     'Toimituspaivä',
@@ -60,12 +34,24 @@ export class JobListComponent implements OnInit {
     'Tunnit',
     'Laskutusnumero'
   ];
-  dataSource = JOB_DATA;
 
-  constructor() { }
+  private subscriptions = new Subscription();
+
+  constructor(private jobService: JobService) {
+    this.subscriptions.add(
+       jobService.getJobList().subscribe(list => {
+         this.dataSource = list;
+       }));
+  }
 
   ngOnInit() {
+    console.log('component: ' + this + ' init');
+    console.log(this.dataSource);
 
+  }
+
+  refresh() {
+    console.log('component: ' + this + ' refresh');
   }
 
 }
