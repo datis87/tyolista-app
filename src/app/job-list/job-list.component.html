@@ -1,3 +1,110 @@
-<a [routerLink]="['tyoNro']">
-    <p>job-list works!</p>
-</a>
+<div class="table-container">
+    <table mat-table [dataSource]="dataSource">
+
+        <!-- Tyo no column --> 
+        <ng-container matColumnDef="Työno">
+            <th mat-header-cell *matHeaderCellDef> Työ no </th>
+            <td mat-cell *matCellDef="let job"> {{job.Tyono}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Pvm">
+            <th mat-header-cell *matHeaderCellDef> Päivämäärä </th>
+            <td mat-cell *matCellDef="let job"> {{job.Paivamaara | date : 'dd.MM.yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Toimituspaivä">
+            <th mat-header-cell *matHeaderCellDef> Toimituspaiva </th>
+            <td mat-cell *matCellDef="let job"> {{job.Toimituspaiva| date : 'dd.MM.yyyy'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Tekijä">
+            <th mat-header-cell *matHeaderCellDef> Tekijä </th>
+            <td mat-cell *matCellDef="let job"> {{job.Tekija}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Työ">
+            <th mat-header-cell *matHeaderCellDef> Työ </th>
+            <td mat-cell *matCellDef="let job"> {{job.Tyo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Asiakas">
+            <th mat-header-cell *matHeaderCellDef> Asiakas </th>
+            <td mat-cell *matCellDef="let job"> {{job.Asiakas}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Yritys">
+            <th mat-header-cell *matHeaderCellDef> Yritys </th>
+            <td mat-cell *matCellDef="let job"> {{job.Yritys}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="Laskutusosoite">
+            <th mat-header-cell *matHeaderCellDef> Laskutusosoite </th>
+            <td mat-cell *matCellDef="let job"> {{job.Laskutusosoite}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Viite">
+            <th mat-header-cell *matHeaderCellDef> Viite </th>
+            <td mat-cell *matCellDef="let job"> {{job.Viite}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Tarjottu">
+            <th mat-header-cell *matHeaderCellDef> Tarjottu </th>
+            <td mat-cell *matCellDef="let job"> {{job.Tarjottu}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Kustannusarvio">
+            <th mat-header-cell *matHeaderCellDef> Kustannusarvio </th>
+            <td mat-cell *matCellDef="let job"> {{job.Kustannusarvio}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Koko">
+            <th mat-header-cell *matHeaderCellDef> Koko </th>
+            <td mat-cell *matCellDef="let job"> {{job.Koko}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Sivumäärä">
+            <th mat-header-cell *matHeaderCellDef> Sivumäärä </th>
+            <td mat-cell *matCellDef="let job"> {{job.Sivumaara}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Painosmäärä">
+            <th mat-header-cell *matHeaderCellDef> Painosmäärä </th>
+            <td mat-cell *matCellDef="let job"> {{job.Painosmaara}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Värit">
+            <th mat-header-cell *matHeaderCellDef> Värit </th>
+            <td mat-cell *matCellDef="let job"> {{job.Varit}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Paperi">
+            <th mat-header-cell *matHeaderCellDef> Paperi </th>
+            <td mat-cell *matCellDef="let job"> {{job.Paperi}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Jälkikäsittely">
+            <th mat-header-cell *matHeaderCellDef> Jälkikäsittely </th>
+            <td mat-cell *matCellDef="let job"> {{job.Jalkikasittely}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Toimituskulut">
+            <th mat-header-cell *matHeaderCellDef> Toimituskulut </th>
+            <td mat-cell *matCellDef="let job"> {{job.Toimituskulut}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Tunnit">
+            <th mat-header-cell *matHeaderCellDef> Tunnit </th>
+            <td mat-cell *matCellDef="let job"> {{job.Tunnit}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Laskutusnumero">
+            <th mat-header-cell *matHeaderCellDef> Laskutusnumero </th>
+            <td mat-cell *matCellDef="let job"> {{job.Laskutusnumero}} </td>
+        </ng-container>
+
+        <!-- Data rows -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+    </table>
+</div>

@@ -1,3 +1,18 @@
-p {
-    color: yellow;
+.container {
+    display: grid;
+    grid-template-rows: 2;
+}
+
+.form-container {
+margin: 10px;
+grid-row: 1;
+}
+
+.form-container > div {
+    float: left;
+    padding: 10px
+}
+
+button {
+    grid-row: 2;
 }
